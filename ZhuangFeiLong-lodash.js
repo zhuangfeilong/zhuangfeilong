@@ -86,6 +86,46 @@ var ZhuangFeiLong = {
   },
 
   /**
+     * _.difference(array, [values]) : 创建一个具有唯一array值的数组，每个值不包含在其他给定的数组中。
+     * 结果值的顺序是由第一个数组中的顺序确定。
+     * 注意: 不像 _.pullAll，这个方法会返回一个新数组。 
+     
+     * Creates an array of `array` values not included in the other given arrays
+     * using [`SameValueZero`](http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero)
+     * for equality comparisons. The order and references of result values are
+     * determined by the first array.
+     *
+     * **Note:** Unlike `_.pullAll`, this method returns a new array.
+     *
+     * @static
+     * @memberOf _
+     * @since 4.0.0
+     * @category Array
+     * @param 参数：array (Array): 要检查的数组。
+     * @param       [values] (...Array): 排除的值。
+     * @param       {Array} array The array to inspect.
+     * @param       {...Array} [values] The values to exclude.
+     * @returns 返回：{Array} Returns the new array of filtered values.
+     * @example 示例
+     *
+     * _.difference([2, 1], [2, 3]);
+     * => [1]
+     * 
+     */
+
+  difference: function(array, annarr) {
+
+    for (var i = 0; i < array.length; i++) {
+      for (var j = 0; j < annarr.length; j++) {
+        if (array[i] == annarr[j]) {
+          array.splice(i, 1)
+        }
+      }
+    }
+    return array
+  },
+
+  /**
    * _.drop(array, [n=1]) : Creates a slice of `array` with `n` elements dropped from the beginning.
    * 创建一个切片数组，去除array前面的n个元素。（n默认值为1。）
    * 
@@ -112,15 +152,15 @@ var ZhuangFeiLong = {
    * // => [1, 2, 3]
    */
 
-  // drop: function(array, n) {
-  //   var length = array == null ? 0 : array.length
-  //   if (!length) {
-  //     return []
-  //   }
-  //   n = ()
-
-
-  // },
+  drop: function(arrdrop, n) {
+    if (n === undefined) {
+      n = 1
+    }
+    for (var i = 0; i < n; i++) {
+      arrdrop.shift(arrdrop[i])
+    }
+    return array
+  },
 
 
 
