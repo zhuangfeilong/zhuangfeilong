@@ -39,15 +39,15 @@ var ZhuangFeilong = {
    *  // => [1, 2, 3]
    *
    */
-  compact: function(array) {
-    var result = []
-    for (var i = 0; i <= array.length; i++) {
-      if (Boolean(array[i]) !== false) {
-        return result.push(array[i])
-      }
-    }
-    return result[]
-  },
+  // compact: function(array) {
+  //   var result = []
+  //   for (var i = 0; i <= array.length; i++) {
+  //     if (Boolean(array[i]) !== false) {
+  //       return result.push(array[i])
+  //     }
+  //   }
+  //   return result[]
+  // },
 
   /**
    * _.concat(array, [values]) : 创建一个新数组，将array与任何数组 或 值连接在一起。
@@ -68,25 +68,25 @@ var ZhuangFeilong = {
    * 
    */
 
-  concat: function(array) {
-    var array = []
-    for (var i = 0; i < arguments.length; i++) {
-      if (typeof arguments[i] == 'object') {
-        for (var j = 0; j < arguments[i]; j++) {
-          array.push(arguments[i][j])
-        }
-      } else {
-        array.push(arguments[i])
-      }
-    }
-    return array
-  },
+  // concat: function(array) {
+  //   var array = []
+  //   for (var i = 0; i < arguments.length; i++) {
+  //     if (typeof arguments[i] == 'object') {
+  //       for (var j = 0; j < arguments[i]; j++) {
+  //         array.push(arguments[i][j])
+  //       }
+  //     } else {
+  //       array.push(arguments[i])
+  //     }
+  //   }
+  //   return array
+  // },
 
 
 
-  take: function() {
+  // take: function() {
 
-  }
+  // }
 
 
 
