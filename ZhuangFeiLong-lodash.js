@@ -43,7 +43,7 @@ var ZhuangFeilong = {
     var result = []
     for (var i = 0; i <= array.length; i++) {
       if (Boolean(array[i]) !== false) {
-        return .push(array[i])
+        return result.push(array[i])
       }
     }
     return result[]
