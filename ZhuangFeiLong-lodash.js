@@ -86,32 +86,32 @@ var ZhuangFeiLong = {
   },
 
   /**
-     * _.difference(array, [values]) : 创建一个具有唯一array值的数组，每个值不包含在其他给定的数组中。
-     * 结果值的顺序是由第一个数组中的顺序确定。
-     * 注意: 不像 _.pullAll，这个方法会返回一个新数组。 
-     
-     * Creates an array of `array` values not included in the other given arrays
-     * using [`SameValueZero`](http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero)
-     * for equality comparisons. The order and references of result values are
-     * determined by the first array.
-     *
-     * **Note:** Unlike `_.pullAll`, this method returns a new array.
-     *
-     * @static
-     * @memberOf _
-     * @since 4.0.0
-     * @category Array
-     * @param 参数：array (Array): 要检查的数组。
-     * @param       [values] (...Array): 排除的值。
-     * @param       {Array} array The array to inspect.
-     * @param       {...Array} [values] The values to exclude.
-     * @returns 返回：{Array} Returns the new array of filtered values.
-     * @example 示例
-     *
-     * _.difference([2, 1], [2, 3]);
-     * => [1]
-     * 
-     */
+   * _.difference(array, [values]) : 创建一个具有唯一array值的数组，每个值不包含在其他给定的数组中。
+   * 结果值的顺序是由第一个数组中的顺序确定。
+   * 注意: 不像 _.pullAll，这个方法会返回一个新数组。 
+   
+   * Creates an array of `array` values not included in the other given arrays
+   * using [`SameValueZero`](http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero)
+   * for equality comparisons. The order and references of result values are
+   * determined by the first array.
+   *
+   * **Note:** Unlike `_.pullAll`, this method returns a new array.
+   *
+   * @static
+   * @memberOf _
+   * @since 4.0.0
+   * @category Array
+   * @param 参数：array (Array): 要检查的数组。
+   * @param       [values] (...Array): 排除的值。
+   * @param       {Array} array The array to inspect.
+   * @param       {...Array} [values] The values to exclude.
+   * @returns 返回：{Array} Returns the new array of filtered values.
+   * @example 示例
+   *
+   * _.difference([2, 1], [2, 3]);
+   * => [1]
+   * 
+   */
 
   difference: function(array, annarr) {
 
@@ -159,9 +159,48 @@ var ZhuangFeiLong = {
     for (var i = 0; i < n; i++) {
       arrdrop.shift(arrdrop[i])
     }
-    return array
+    return arrdrop
   },
 
+
+  /**
+   * Fills elements of `array` with `value` from `start` up to, but not
+   * including, `end`.
+   *
+   * **Note:** This method mutates `array`.
+   *
+   * @static
+   * @memberOf _
+   * @since 3.2.0
+   * @category Array
+   * @param  参数 array (Array): 要填充改变的数组。
+   * @param       value (*): 填充给 array 的值。
+   * @param       [start=0] (number): 开始位置（默认0）。
+   * @param       [end=array.length] (number):结束位置（默认array.length）。
+   * @param       {Array} array The array to fill.
+   * @param       {*} value The value to fill `array` with.
+   * @param       {number} [start=0] The start position.
+   * @param       {number} [end=array.length] The end position.
+   * @returns 返回 (Array): 返回 array。
+   * @returns     {Array} Returns `array`.
+   * @example 示例
+   *
+   * var array = [1, 2, 3];
+   *
+   * _.fill(array, 'a');
+   * console.log(array);
+   * // => ['a', 'a', 'a']
+   *
+   * _.fill(Array(3), 2);
+   * // => [2, 2, 2]
+   *
+   * _.fill([4, 6, 8, 10], '*', 1, 3);
+   * // => [4, '*', '*', 10]
+   */
+  fill: function(array, value, a, b) {
+
+
+  }
 
 
   // take: function() {
