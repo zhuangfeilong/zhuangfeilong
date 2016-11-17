@@ -39,15 +39,15 @@ var ZhuangFeilong = {
    *  // => [1, 2, 3]
    *
    */
-  // compact: function(array) {
-  //   var result = []
-  //   for (var i = 0; i <= array.length; i++) {
-  //     if (Boolean(array[i]) !== false) {
-  //       return result.push(array[i])
-  //     }
-  //   }
-  //   return result[]
-  // },
+  compact: function(array) {
+    var newarr = []
+    for (var i = 0; i < array.length; i++) {
+      if (Boolean(array[i]) !== false) {
+        return newarr.push(array[i])
+      }
+    }
+    return newarr
+  },
 
   /**
    * _.concat(array, [values]) : 创建一个新数组，将array与任何数组 或 值连接在一起。
