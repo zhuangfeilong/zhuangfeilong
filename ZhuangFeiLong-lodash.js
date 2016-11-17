@@ -72,17 +72,17 @@ var ZhuangFeiLong = {
    */
 
   concat: function(array, ann) {
-    var array = []
+    var newArray = []
     for (i = 0; i < arguments.length; i++) {
       if (typeof arguments[i] == 'object') {
         for (j = 0; j < arguments[i]; j++) {
-          array.push(arguments[i][j])
+          newArray.push(arguments[i][j])
         }
       } else {
-        array.push(arguments[i])
+        newArray.push(arguments[i])
       }
     }
-    return array
+    return newArray
   },
 
 
