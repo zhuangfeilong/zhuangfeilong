@@ -73,9 +73,9 @@ var ZhuangFeiLong = {
 
   concat: function(array, ann) {
     var newArray = []
-    for (i = 0; i < arguments.length; i++) {
+    for (var i = 0; i < arguments.length; i++) {
       if (typeof arguments[i] == 'object') {
-        for (j = 0; j < arguments[i]; j++) {
+        for (var j = 0; j < arguments[i].length; j++) {
           newArray.push(arguments[i][j])
         }
       } else {
@@ -84,6 +84,44 @@ var ZhuangFeiLong = {
     }
     return newArray
   },
+
+  /**
+   * _.drop(array, [n=1]) : Creates a slice of `array` with `n` elements dropped from the beginning.
+   * 创建一个切片数组，去除array前面的n个元素。（n默认值为1。）
+   * 
+   * @category Array
+   * @param 参数：array (Array): 要查询的数组。
+   *              [n=1] (number): 要去除的元素个数。
+   *              {Array} array The array to query.
+   * @param       {number} [n=1] The number of elements to drop.
+   * @param-      {Object} [guard] Enables use as an iteratee for methods like `_.map`.
+   * @returns 返回：(Array): 返回array剩余切片。   
+   *              {Array} Returns the slice of `array`.
+   * @example 示例
+   *
+   * _.drop([1, 2, 3]);
+   * // => [2, 3]
+   *
+   * _.drop([1, 2, 3], 2);
+   * // => [3]
+   *
+   * _.drop([1, 2, 3], 5);
+   * // => []
+   *
+   * _.drop([1, 2, 3], 0);
+   * // => [1, 2, 3]
+   */
+
+  drop: function(array, n) {
+    var length = array == null ? 0 : array.length
+    if (!length) {
+      return []
+    }
+    n = ()
+
+
+  },
+
 
 
   // take: function() {
