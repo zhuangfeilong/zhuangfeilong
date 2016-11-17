@@ -68,9 +68,18 @@ var ZhuangFeilong = {
    * 
    */
 
-  concat: function(array, [i]) {
-
-
+  concat: function(array) {
+    var array = []
+    for (var i = 0; i < arguments.length; i++) {
+      if (typeof arguments[i] == 'object') {
+        for (var j = 0; j < arguments[i]; j++) {
+          array.push(arguments[i][j])
+        }
+      } else {
+        array.push(arguments[i])
+      }
+    }
+    return array
   },
 
 
