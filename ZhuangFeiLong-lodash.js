@@ -112,15 +112,15 @@ var ZhuangFeiLong = {
    * // => [1, 2, 3]
    */
 
-  drop: function(array, n) {
-    var length = array == null ? 0 : array.length
-    if (!length) {
-      return []
-    }
-    n = ()
+  // drop: function(array, n) {
+  //   var length = array == null ? 0 : array.length
+  //   if (!length) {
+  //     return []
+  //   }
+  //   n = ()
 
 
-  },
+  // },
 
 
 
