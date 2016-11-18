@@ -205,7 +205,7 @@ var ZhuangFeiLong = {
       n = 1
     }
     for (var i = 0; i < n; i++) {
-      arrayDropRight.pop(arrayDropRight[i])
+      arrayDropRight.pop()
     }
     return arrayDropRight
   },
