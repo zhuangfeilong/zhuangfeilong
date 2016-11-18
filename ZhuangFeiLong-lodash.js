@@ -465,5 +465,18 @@ var ZhuangFeiLong = {
   },
 
 
+  fill: function(arrayF, value, x, y) {
+    if (x == undefined) {
+      x = 0
+    }
+    if (y == undefined) {
+      y = arrayF.length
+    }
+    for (var i = x; i < y; i++) {
+      arrayF[i] = value
+    }
+    return arrayF
+  },
+
 
 }
