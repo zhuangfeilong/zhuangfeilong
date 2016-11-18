@@ -200,18 +200,19 @@ var ZhuangFeiLong = {
    * // => [1, 2, 3]
    */
 
-  dropright: function(arrayRight, n) {
-    if (n === undefined) {
+  dropright: function(arrayDropRight, n) {
+    if (n == undefined) {
       n = 1
     }
-    for (var i = arrayRight.length - n; i < arrayRight.length; i++) {
-      arrayRight.pop(arrayRight[i])
+    for (var i = 0; i < n; i++) {
+      arrayDropRight.pop(arrayDropRight[i])
     }
-    return arrayRight
+    return arrayDropRight
   },
 
 
   /**
+   * _.fill(array, value, [start=0], [end=array.length]): 使用 value 值来填充（替换） array，从start位置开始, 到end位置结束（但不包含end位置）。
    * Fills elements of `array` with `value` from `start` up to, but not
    * including, `end`.
    *
@@ -245,9 +246,17 @@ var ZhuangFeiLong = {
    * _.fill([4, 6, 8, 10], '*', 1, 3);
    * // => [4, '*', '*', 10]
    */
-  fill: function(array, value, a, b) {
-
-
+  fill: function(arrayF, value, x, y) {
+    if (x == undefined) {
+      x = 0
+    }
+    if (y == undefined) {
+      y = arrayF.length
+    }
+    for (var i = x; i < y; i++) {
+      arrayF[i] = value
+    }
+    return arrayF
   },
 
 
@@ -464,19 +473,6 @@ var ZhuangFeiLong = {
     return newArray
   },
 
-
-  fill: function(arrayF, value, x, y) {
-    if (x == undefined) {
-      x = 0
-    }
-    if (y == undefined) {
-      y = arrayF.length
-    }
-    for (var i = x; i < y; i++) {
-      arrayF[i] = value
-    }
-    return arrayF
-  },
 
 
 }
