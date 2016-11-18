@@ -200,7 +200,7 @@ var ZhuangFeiLong = {
    * // => [1, 2, 3]
    */
 
-  dropright: function(arrayDropRight, n) {
+  dropRight: function(arrayDropRight, n) {
     if (n == undefined) {
       n = 1
     }
