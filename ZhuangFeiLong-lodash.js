@@ -454,6 +454,16 @@ var ZhuangFeiLong = {
     return false
   },
 
+  reject: function(collection, predicate) {
+    var newArray = []
+    for (var i = 0; i < collection.length; i++) {
+      if (!predicate(collection[i], i, collection)) {
+        newArray.push(collection[i])
+      }
+    }
+    return newArray
+  },
+
 
 
 }
