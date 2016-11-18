@@ -432,27 +432,31 @@ var ZhuangFeiLong = {
       result = fun(result, arrayX[i])
     }
     return result
-
   },
 
 
 
-  every: function(collection, Boolean) {
+  every: function(collection, predicate) {
     if (collection = []) {
       return true
     }
-    if (!Boolean(collection[i])) {
-      return false
+    for (var i = 0; i < collection.length; i++) {
+      if (!predicate(collection[i])) {
+        return false
+      }
     }
     return true
   },
 
-  some: function(collection, Boolean) {
-    if (Boolean(collection[i])) {
-      return true
+  some: function(collection, predicate) {
+    for (var i = 0; i < collection.length; i++) {
+      if (predicate(collection[i])) {
+        return true
+      }
     }
     return false
-  }
+  },
+
 
 
 }
