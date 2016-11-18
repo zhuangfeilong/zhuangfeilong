@@ -473,6 +473,16 @@ var ZhuangFeiLong = {
     return newArray
   },
 
-
+  flatten: function(arrayFlat) {
+    var newFlat = []
+    for (var i = 0; i < arrayFlat.length; i++) {
+      if (Array.isArray(arrayFlat[i])) {
+        newFlat = newFlat.concat(arrayFlat[i])
+      } else {
+        newFlat.push(arrayFlat[i])
+      }
+    }
+    return newFlat
+  }
 
 }
