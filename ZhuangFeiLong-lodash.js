@@ -308,7 +308,47 @@ var ZhuangFeiLong = {
   //   }
   //   return arrayRight
   // },
-
+  /**
+   * _.some(collection, [predicate=_.identity]) : 遍历 collection（集合）元素，返回 predicate（断言函数）返回真值
+   *  的所有元素的数组。 predicate（断言函数）调用三个参数：(value, index|key, collection)。 
+   * Iterates over elements of `collection`, returning an array of all elements
+   * `predicate` returns truthy for. The predicate is invoked with three
+   * arguments: (value, index|key, collection).
+   *
+   * **Note:** Unlike `_.remove`, this method returns a new array.
+   *
+   * @static
+   * @memberOf _
+   * @since 0.1.0
+   * @category Collection
+   * @param 参数：collection (Array|Object): 一个用来迭代的集合。
+   * @param       [predicate=_.identity] (Array|Function|Object|string): 每次迭代调用的函数。
+   * @param       {Array|Object} collection The collection to iterate over.
+   * @param       {Function} [predicate=_.identity] The function invoked per iteration.
+   * @returns 返回 ：（Array): 返回一个新的过滤后的数组。
+   * @returns         {Array} Returns the new filtered array.
+   * @see _.reject
+   * @example  示例
+   *
+   * var users = [
+   * { 'user': 'barney', 'age': 36, 'active': true },
+   * { 'user': 'fred', 'age': 40, 'active': false }
+   * ];
+   ** _.filter(users, function(o) { return !o.active; });
+   * // => objects for ['fred']
+   *
+   * // The `_.matches` iteratee shorthand.
+   * _.filter(users, { 'age': 36, 'active': true });
+   * // => objects for ['barney']
+   *
+   * // The `_.matchesProperty` iteratee shorthand.
+   * _.filter(users, ['active', false]);
+   * // => objects for ['fred']
+   *
+   * // The `_.property` iteratee shorthand.
+   * _.filter(users, 'active');
+   * // => objects for ['barney']
+   */
   filter: function(collection, predicate) {
     var result = []
     for (var i = 0; i < collection.length; i++) {
@@ -319,6 +359,50 @@ var ZhuangFeiLong = {
     return result
   },
 
+
+  /**
+   * _.partition(collection, [predicate=_.identity]) ：创建一个分成两组的元素数组，第一组包含predicate（断言函数）
+   * 返回为 truthy（真值）的元素，第二组包含predicate（断言函数）返回为 falsey（假值）的元素。predicate 调用1个参数：(value)。
+   * 
+   * Creates an array of elements split into two groups, the first of which
+   * contains elements `predicate` returns truthy for, the second of which
+   * contains elements `predicate` returns falsey for. The predicate is
+   * invoked with one argument: (value).
+   * 
+   * @static
+   * @memberOf _
+   * @since 3.0.0
+   * @category Collection
+   * @param 参数：collection (Array|Object): 用来迭代的集合。
+   * @param       [predicate=_.identity] (Array|Function|Object|string): 每次迭代调用的函数。
+   * @param
+   * @param       {Array|Object} collection The collection to iterate over.
+   * @param       {Function} [predicate=_.identity] The function invoked per iteration.
+   * @returns  返回： (Array): 返回元素分组后的数组。
+   * @returns         {Array} Returns the array of grouped elements.
+   * @example 示例
+   *
+   * var users = [
+   * { 'user': 'barney', 'age': 36, 'active': false },
+   * { 'user': 'fred', 'age': 40, 'active': true },
+   * { 'user': 'pebbles', 'age': 1, 'active': false }
+   * ];
+   *
+   * _.partition(users, function(o) { return o.active; });
+   * // => objects for [['fred'], ['barney', 'pebbles']]
+   *
+   * // The `_.matches` iteratee shorthand.
+   * _.partition(users, { 'age': 1, 'active': false });
+   * // => objects for [['pebbles'], ['barney', 'fred']]
+   *
+   * // The `_.matchesProperty` iteratee shorthand.
+   * _.partition(users, ['active', false]);
+   * // => objects for [['barney', 'pebbles'], ['fred']]
+   *
+   * // The `_.property` iteratee shorthand.
+   * _.partition(users, 'active');
+   * // => objects for [['fred'], ['barney', 'pebbles']]
+   */
 
   partition: function(collection, fn) {
     var result = [
@@ -344,7 +428,7 @@ var ZhuangFeiLong = {
       start = 1
     }
     var result = initial
-    for (var i = 1; i < arrayX.length; i++) {
+    for (var i = start; i < arrayX.length; i++) {
       result = fun(result, arrayX[i])
     }
     return result
@@ -362,6 +446,13 @@ var ZhuangFeiLong = {
     }
     return true
   },
+
+  some: function(collection, Boolean) {
+    if (Boolean(collection[i])) {
+      return true
+    }
+    return false
+  }
 
 
 }
