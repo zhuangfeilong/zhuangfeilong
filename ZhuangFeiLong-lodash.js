@@ -437,9 +437,6 @@ var ZhuangFeiLong = {
 
 
   every: function(collection, predicate) {
-    if (collection = []) {
-      return true
-    }
     for (var i = 0; i < collection.length; i++) {
       if (!predicate(collection[i])) {
         return false
