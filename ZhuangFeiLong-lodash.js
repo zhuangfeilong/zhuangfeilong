@@ -291,7 +291,7 @@ var ZhuangFeiLong = {
    *  
    */
   map: function(arrayMap, fn) {
-    var result = new Array[arrayMap.length]
+    var result = []
     for (var i = 0; i < arrayMap.length; i++) {
       result.push(fn(arrayMap[i], i, arrayMap))
 
@@ -313,7 +313,7 @@ var ZhuangFeiLong = {
     var result = []
     for (i = 0; i < collection.length; i++) {
       if (predicate(collection[i], i, collection) !== false) {
-        result.push(predicate(collection[i], i, collection))
+        result.push(predicate(collection[i]))
       }
     }
     return result
@@ -324,7 +324,7 @@ var ZhuangFeiLong = {
       []
     ]
     for (var i = 0; i < collection.length; i++) {
-      if (fn(collection[i]), i, collection) {
+      if (fn(collection[i], i, collection)) {
         result[0].push(collection[i])
       } else {
         result[1].push(collection[i])
