@@ -428,7 +428,13 @@ var ZhuangFeiLong = {
     return result
   },
 
-
+  /**
+   * _.reduce(collection, [iteratee=_.identity], [accumulator])
+   * 压缩 collection（集合）为一个值，通过 iteratee（迭代函数）遍历 collection（集合）中的每个元素
+   * 每次返回的值会作为下一次迭代使用(愚人码头注：作为iteratee（迭代函数）的第一个参数使用)。
+   * 如果没有提供 accumulator，则 collection（集合）中的第一个元素作为初始值。
+   * 
+   */
 
   reduce: function(arrayX, fun, initial) {
     var start = 0
@@ -443,8 +449,12 @@ var ZhuangFeiLong = {
     return result
   },
 
-
-
+  /**
+   * _.every(collection, [predicate=_.identity])
+   * 通过 predicate（断言函数） 检查 collection（集合）中的 所有 元素是否都返回真值。
+   * 一旦 predicate（断言函数） 返回假值，迭代就马上停止。predicate（断言函数）调用三个参数：
+   *  (value, index|key, collection)。 
+   */
   every: function(collection, predicate) {
     for (var i = 0; i < collection.length; i++) {
       if (!predicate(collection[i])) {
@@ -453,7 +463,11 @@ var ZhuangFeiLong = {
     }
     return true
   },
-
+  /**
+   * _.some(collection, [predicate=_.identity])
+   * 通过 predicate（断言函数）检查collection（集合）中的元素是否存在 任意 truthy（真值）的元素，
+   * 一旦 predicate（断言函数）返回 truthy（真值），遍历就停止。 predicate 调用3个参数：(value, index|key, collection)。
+   */
   some: function(collection, predicate) {
     for (var i = 0; i < collection.length; i++) {
       if (predicate(collection[i])) {
@@ -463,6 +477,10 @@ var ZhuangFeiLong = {
     return false
   },
 
+  /**
+   * _.reject(collection, [predicate=_.identity])
+   * _.filter的反向方法;此方法 返回 predicate（断言函数） 不 返回 truthy（真值）的collection（集合）元素（愚人码头注释：非真）。
+   */
   reject: function(collection, predicate) {
     var newArray = []
     for (var i = 0; i < collection.length; i++) {
@@ -473,6 +491,11 @@ var ZhuangFeiLong = {
     return newArray
   },
 
+
+  /**
+   * _.flatten(array)
+   * 减少一级array嵌套深度。
+   */
   flatten: function(arrayFlat) {
     var newFlat = []
     for (var i = 0; i < arrayFlat.length; i++) {
@@ -484,7 +507,10 @@ var ZhuangFeiLong = {
     }
     return newFlat
   },
-
+  /**
+   * _.flattenDeep(array)
+   * 将array递归为一维数组。
+   */
 
 
   flattenDeep: function(arrayFD) {
@@ -501,4 +527,12 @@ var ZhuangFeiLong = {
     return newFlat
   },
 
+  /**
+   * _.last(array)
+   * 获取array中的最后一个元素。
+   */
+  last: function(array) {
+    var last = array[array.length - 1]
+    return last
+  }
 }
