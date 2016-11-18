@@ -483,6 +483,22 @@ var ZhuangFeiLong = {
       }
     }
     return newFlat
-  }
+  },
+
+
+
+  flattenDeep: function(arrayFD) {
+    var newFlat = []
+    for (var i = 0; i < arrayFD; i++) {
+      if ((arrayFD[i].length === undefined) && (typeof(arrayFD[i]) !== 'object')) {
+        newFlat.push(arrayFD[i])
+      } else {
+        for (var j = 0; j < arrayFD[i].length; j++) {
+          newFlat.push(arrayFD[i][j])
+        }
+      }
+    }
+    return newFlat
+  },
 
 }
