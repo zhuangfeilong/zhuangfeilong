@@ -337,4 +337,31 @@ var ZhuangFeiLong = {
 
 
 
+  reduce: function(arrayX, fun, initial) {
+    var start = 0
+    if (initial == undefined) {
+      initial = arrayX[0]
+      start = 1
+    }
+    var result = initial
+    for (var i = 1; i < arrayX.length; i++) {
+      result = fun(result, arrayX[i])
+    }
+    return result
+
+  },
+
+
+
+  every: function(collection, Boolean) {
+    if (collection = []) {
+      return true
+    }
+    if (!Boolean(collection[i])) {
+      return false
+    }
+    return true
+  },
+
+
 }
