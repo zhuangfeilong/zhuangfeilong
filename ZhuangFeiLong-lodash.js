@@ -291,10 +291,9 @@ var ZhuangFeiLong = {
    *  
    */
   map: function(arrayMap, fn) {
-    var result = []
-    var index
+    var result = new Array[arrayMap.length]
     for (var i = 0; i < arrayMap.length; i++) {
-      result.push(fn(arrayMap[i], index, arrayMap))
+      result.push(fn(arrayMap[i], i, arrayMap))
 
     }
     return result
