@@ -312,14 +312,14 @@ var ZhuangFeiLong = {
 
   filter: function(collection, predicate) {
     var result = []
-    for (i = 0; i < array.length; i++) {
+    for (i = 0; i < collection.length; i++) {
       if (predicate(collection[i], i, collection) !== false) {
         result.push(predicate(collection[i], i, collection))
       }
     }
     return result
   },
-  partition: function() {
+  partition: function(collection, fn) {
     var result = [
       [],
       []
