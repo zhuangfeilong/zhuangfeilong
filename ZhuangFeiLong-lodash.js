@@ -534,5 +534,149 @@ var ZhuangFeiLong = {
   last: function(array) {
     var last = array[array.length - 1]
     return last
-  }
+  },
+
+
+  keys: function(object) {
+    var result = []
+    for (var key in object) {
+      result.push(key)
+    }
+    return result
+  },
+
+  size: function(array) {
+    if (Array.isArray(array)) {
+      return array.length
+    }
+    var l = 0
+    for (var key in array) {
+      l++
+    }
+    return l
+  },
+
+
+  values: function(object) {
+    var result = []
+    for (var key in object) {
+      result.push(object[key])
+    }
+    return result
+  },
+
+
+
+  /**
+   * _.every(collection,[predicate=_.identity])
+   * 通过 predicate（断言函数） 检查 collection（集合）中的 所有 元素是否都返回真值。
+   * 一旦 predicate（断言函数） 返回假值，迭代就马上停止。
+   * predicate（断言函数）调用三个参数： (value, index|key, collection)。 
+   */
+  every2: function(collection, predicate) {
+    if (!predicate) {
+      predicate = identity
+    }
+    if (Array.isArray(collection)) {
+      for (var i = 0; i < collection.length; i++) {
+        if (!predicate(collection[i]), i, collection) {
+          return false
+        }
+      }
+      return true
+    } else {
+      for (var key in collection) {
+        if (!predicate(collection[key], key, collection)) {
+          return false
+        }
+      }
+      return true
+    }
+  },
+  /**
+   * _.fromPairs(pairs)
+   * 与_.toPairs正好相反；这个方法返回一个由键值对pairs构成的对象。
+   *
+   */
+  fromPairs: function(pairs) {
+    var object = {}
+    for (var i = 0; i < pairs.length; i++) {
+      object[pairs[i][0]] = pairs[i][1]
+    }
+    return object
+  },
+
+  /**
+   * _.head(array)
+   * 获取数组 array 的第一个元素。
+   * 
+   * 参数：array (Array): 要查询的数组。
+   * 返回值(*): 返回数组 array的第一个元素。
+   */
+
+  head: function(array) {
+    return array[0]
+  },
+  /**
+   * _.indexOf(array, value, [fromIndex=0])
+   * 使用 SameValueZero 等值比较，返回首次 value 在数组array中被找到的 索引值，
+   * 如果 fromIndex 为负值，将从数组array尾端索引进行匹配。
+   * 参数：array (Array): 要查询的数组。value (*): 需要查找的值。
+   * [fromIndex=0] (number): 开始查询的位置。
+   * 返回值(*): 返回 值value在数组中的索引位置, 没有找到为返回-1。
+   */
+
+  indexOf: function(array, value, fromIndex) {
+    var newArray = []
+    if (fromIndex == undefined) {
+      fromIndex = 0
+    }
+    for (var i = fromIndex; i < array.length; i++) {
+      newArray.push(array[i])
+    }
+    return newArray.indexOf(value) + fromIndex
+  },
+
+  /**
+   * _.join(array, [separator=','])
+   * 将 array 中的所有元素转换为由 separator 分隔的字符串。
+   * 
+   * 参数：array (Array): 要转换的数组。[separator=','] (string): 分隔元素。
+   * 返回值(*): (string): 返回连接字符串。
+   */
+  join: function(array, separator) {
+    if (separator == undefined) {
+      separator = ','
+    }
+    array = array.join(separator)
+    return array
+  },
+
+
+
+  /**
+   * _.invert(object)
+   * 创建一个object键值倒置后的对象。 如果 object 有重复的值，后面的值会覆盖前面的值。
+   * 
+   * 参数: object (Object): 要键值倒置对象。
+   * 返回: (Object): 返回新的键值倒置后的对象。
+   * 
+   */
+  invert: function(object) {
+    var newObject = {}
+
+  },
+  /**
+   * _.keys(object)
+   * 创建一个 object 的自身可枚举属性名为数组。 
+   * Note: 非对象的值会被强制转换为对象，查看 ES spec 了解详情。
+   * 参数: object (Object): 要检索的对象。
+   * (Array): 返回包含属性名的数组。
+   */
+  keys: function(object) {
+
+  },
+
+
+
 }
