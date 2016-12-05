@@ -702,9 +702,9 @@ var ZhuangFeiLong = {
 	 * 参数：array (Array): 要查询的数组。[n=0] (number): 要返回元素的索引值。
 	 * 返回值(*): 获取array数组的第n个元素。
 	 */
-	nth: function(array, n) {
+	// nth: function(array, n) {
 
-	},
+	// },
 
 
 	/**
@@ -715,10 +715,10 @@ var ZhuangFeiLong = {
 	 * 返回: (Object): 返回新的键值倒置后的象对。
 	 * 
 	 */
-	invert: function(object) {
-		var newObject = {}
+	// invert: function(object) {
+	// 	var newObject = {}
 
-	},
+	// },
 	/**
 	 * _.keys(object)
 	 * 创建一个 object 的自身可枚举属性名为数组。 
@@ -726,9 +726,9 @@ var ZhuangFeiLong = {
 	 * 参数: object (Object): 要检索的对象。
 	 * (Array): 返回包含属性名的数组。
 	 */
-	keys: function(object) {
+	// keys: function(object) {
 
-	},
+	// },
 
 
 
@@ -819,17 +819,17 @@ var ZhuangFeiLong = {
 
 
 
-	after: function(n, func) {
-		function after(type) {
+	// after: function(n, func) {
+	// 	function after(type) {
 
-		}
-	},
+	// 	}
+	// },
 
-	matches: function(source) {
-		return functionz(object) {
+	// matches: function(source) {
+	// 	return functionz(object) {
 
-		}
-	},
+	// 	}
+	// },
 
 	parseJson: function() {
 		var json = `{"a":1,"b":"c","d":true}`
