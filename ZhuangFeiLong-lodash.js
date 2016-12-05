@@ -826,9 +826,7 @@ var ZhuangFeiLong = {
 	// },
 
 	// matches: function(source) {
-	// 	return functionz(object) {
-
-	// 	}
+		
 	// },
 
 	parseJson: function() {
@@ -935,6 +933,7 @@ var ZhuangFeiLong = {
 			return result
 		}
 	},
+
 	最大公约数: function() {
 		var m=270
 		var n=65
@@ -1017,7 +1016,7 @@ var ZhuangFeiLong = {
 				}
 			}
 		},
-		
+
 
 
 
